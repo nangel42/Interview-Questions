@@ -1,5 +1,8 @@
 # Interview-Questions
 A list of interview questions to study up on!
+<br />
+<br />
+If you have more too add feel free to make a pull request, the more knowledge the better!
 
 
 https://aws.amazon.com/what-is/sdlc/#:~:text=The%20software%20development%20lifecycle%20(SDLC,expectations%20during%20production%20and%20beyond.
@@ -20,18 +23,7 @@ Learn about AGILE and SCRUM
 
 "If you come across an issue how do you go about problem solving"
 
-Nico's chat with Rushita
-Elevator pitch 1 minute
-Tell people about you
-- High school & community college
-- Degree at UA
-- Job in medical field
-- Wanted to leave medical filed (why)
-- Wanted to pursue IT (why)
-- Went to GA bootcamp full-time for 3 months
-- Learned the following languages
-- How you feel about engineering after the bootcamp
-- Have x# of projects I can show, if desired
+
 
 Be prepared on how you would describe your project(s)
 
