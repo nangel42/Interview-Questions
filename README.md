@@ -68,7 +68,100 @@ Have 2-3 questions for them
 - what do you enjoy most about your team
 
 
+
+
+
+
+
+
 ## CSS
+
+### Easy
+
+```
+Q: how do I connect my css file with in my html file?
+```
+* A:  `<link rel=“stylesheet” href=“path” />`
+
+
+```
+Q: What is a selector and what is its syntax?
+```
+* A: `way to select html element to change style
+Selector { property: value }  — this is called a “rule”
+Property is what you want to change, value is how you want to change it`
+
+
+```
+Q: How would I write a element/class/id/attribute selector?
+```
+* A: 
+`element{}, `
+`.class{}, `
+`#id{}, `
+`element[attribute/value]{} `
+
+
+```
+Q: What is the box model?
+```
+* A: `every element is a rectangle that takes up a certain amount of space and has margin, padding, and border`
+
+```
+Q: What is the difference between margin, padding, and border?
+```
+* A: `margin (between elements),` `padding (between element content and border),` `border (outer edge of the element)`
+
+
+```
+Q: What are the different ways to make a site responsive? Which are native?
+```
+* A: `Native - Media Queries, Flexbox, Grid`
+`Not Native - Bootstrap`
+
+
+```
+Q: What is a useful tool to align elements horizontally and create your layout? How do we declare something a flex element? 
+```
+* A: `Flexbox,` `display: flex`
+
+
+```
+Q: What are the two categories of flex properties?
+```
+* A: `flex container,` `flex child`
+
+
+```
+Q: How many columns are there in the bootstrap grid system? What are the 5 built in breakpoint sizes?
+```
+* A: `12,` `xs/sm/md/lg/xl`
+
+```
+Q: How do we write the class name for an element to use a specific amount of columns at a specific breakpoint?
+```
+* A: class=“`Col-md-8,` `col-xs-4`"
+
+### Medium
+
+
+### Hard
+
+
+
+## HTML
+
+### Easy
+
+
+### Medium
+
+
+### Hard
+
+
+
+## JavaScript
 
 ### Easy
 
