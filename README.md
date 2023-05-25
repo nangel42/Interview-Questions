@@ -66,3 +66,14 @@ What is Agile
 Have 2-3 questions for them
 - what are the challenges you see for this position?
 - what do you enjoy most about your team
+
+
+## CSS
+
+### Easy
+
+
+### Medium
+
+
+### Hard
