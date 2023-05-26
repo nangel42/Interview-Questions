@@ -83,14 +83,14 @@ Have 2-3 questions for them
 ```
 Q: how do I connect my css file with in my html file?
 ```
-* A:  `<link rel=“stylesheet” href=“path” />`
+* A: <br /> `<link rel=“stylesheet” href=“path” />`
 
 <br />
 
 ```
 Q: What is a selector and what is its syntax?
 ```
-* A: `way to select html element to change style
+* A: <br /> `way to select html element to change style
 Selector { property: value }  — this is called a “rule”
 Property is what you want to change, value is how you want to change it`
 
@@ -99,7 +99,7 @@ Property is what you want to change, value is how you want to change it`
 ```
 Q: How would I write a element/class/id/attribute selector?
 ```
-* A: 
+* A: <br />
 `element{}, ` <br />
 `.class{}, `<br />
 `#id{}, `<br />
@@ -110,55 +110,137 @@ Q: How would I write a element/class/id/attribute selector?
 ```
 Q: What is the box model?
 ```
-* A: `every element is a rectangle that takes up a certain amount of space and has margin, padding, and border`
+* A: <br /> `every element is a rectangle that takes up a certain amount of space and has margin, padding, and border`
 
 <br />
 
 ```
 Q: What is the difference between margin, padding, and border?
 ```
-* A: `margin (between elements)` <br />`padding (between element content and border)` <br />`border (outer edge of the element)`
+* A: <br /> `margin (between elements)` <br />`padding (between element content and border)` <br />`border (outer edge of the element)`
 
 <br />
 
 ```
 Q: What are the different ways to make a site responsive? Which are native?
 ```
-* A: `Native - Media Queries, Flexbox, Grid`<br />
+* A: <br /> `Native - Media Queries, Flexbox, Grid` <br />
 `Not Native - Bootstrap`
 
 <br />
 
 ```
-Q: What is a useful tool to align elements horizontally and create your layout? How do we declare something a flex element? 
+Q: What is a useful tool to align elements horizontally and create your layout? 
+How do we declare something a flex element? 
 ```
-* A: `Flexbox` <br />`display: flex`
+* A: <br /> `Flexbox` <br /> `display: flex`
 
 <br />
 
 ```
 Q: What are the two categories of flex properties?
 ```
-* A: `flex container` <br />`flex child`
+* A: <br /> `flex container` <br /> `flex child`
 
 <br />
 
 ```
 Q: How many columns are there in the bootstrap grid system? What are the 5 built in breakpoint sizes?
 ```
-* A: `12` <br />`xs/sm/md/lg/xl`
+* A: <br /> `12` <br /> `xs/sm/md/lg/xl`
 
 <br />
 
 ```
 Q: How do we write the class name for an element to use a specific amount of columns at a specific breakpoint?
 ```
-* A: class=“`Col-md-8`<br /> `col-xs-4`"
+* A: <br /> class=“`Col-md-8`<br /> `col-xs-4`"
+
+<br />
+
+
 
 ### Medium
 
+<br />
+
+```
+Q: How do you select multiple elements? all descendants? direct descendants?
+```
+* A: <br />
+`multiple selector: Tag1, tag2, tag3 {}, ` <br />
+`descendant selector: tag1 tag2 {}, ` <br />
+`direct descendant selector: tag1 > tag2 {} ` <br />
+
+<br />
+
+```
+Q: What is specificity? What is the order of specificity?
+```
+* A: <br /> `how specific the selector is an what will override what
+tag/element (1pt), class (10pt), id (100pt), inline (1000pt)`
+
+<br />
+
+```
+Q: What are the different ways to change a color?
+```
+* A: <br />
+`by name - color: red` <br />
+`by hex - color: #111111` <br />
+`by RGBA - color(255, 255, 255, 0.5)` 
+
+<br />
+
+```
+Q: What unit is used to specify the length of something? How can you do it in relative units?
+```
+* A: <br /> `fixed - px
+relative - %, vh/vw
+relative - em (relative to parents length, 1em same as parent, compounds), rem(always relative to root html element (16 by default)`
+
+<br />
+
+
 
 ### Hard
+
+<br />
+
+```
+Q: How do select specific children in relation to the parent without knowing how to access that element?
+```
+* A: <br />
+`element:first-child{}` <br />
+`element:last-child{}` <br />
+`element:nth-child(3){} `
+
+<br />
+
+```
+Q: What is a psuedo-selector? Examples?
+```
+* A: <br /> `only targets an element when it is in a certain state` <br />
+`element:hover {}`
+
+<br />
+
+```
+Q: What are the 5 main values for the position property? What do they do?
+```
+* A: <br /> `static` <br /> `relative (relative to self)` <br /> `absolute (relative to parent)` <br /> `fixed (relative to viewport—not affected by scroll)` <br /> `sticky`
+
+<br />
+
+```
+Q: What is the z-index property used for?
+```
+* A: <br /> `Stack one element on top of the other`
+
+<br />
+<br />
+<br />
+
 
 
 
