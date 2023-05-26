@@ -96,9 +96,9 @@ Property is what you want to change, value is how you want to change it`
 Q: How would I write a element/class/id/attribute selector?
 ```
 * A: 
-`element{}, `
-`.class{}, `
-`#id{}, `
+`element{}, ` <br />
+`.class{}, `<br />
+`#id{}, `<br />
 `element[attribute/value]{} `
 
 
@@ -110,37 +110,37 @@ Q: What is the box model?
 ```
 Q: What is the difference between margin, padding, and border?
 ```
-* A: `margin (between elements),` `padding (between element content and border),` `border (outer edge of the element)`
+* A: `margin (between elements)` <br />`padding (between element content and border)` <br />`border (outer edge of the element)`
 
 
 ```
 Q: What are the different ways to make a site responsive? Which are native?
 ```
-* A: `Native - Media Queries, Flexbox, Grid`
+* A: `Native - Media Queries, Flexbox, Grid`<br />
 `Not Native - Bootstrap`
 
 
 ```
 Q: What is a useful tool to align elements horizontally and create your layout? How do we declare something a flex element? 
 ```
-* A: `Flexbox,` `display: flex`
+* A: `Flexbox` <br />`display: flex`
 
 
 ```
 Q: What are the two categories of flex properties?
 ```
-* A: `flex container,` `flex child`
+* A: `flex container` <br />`flex child`
 
 
 ```
 Q: How many columns are there in the bootstrap grid system? What are the 5 built in breakpoint sizes?
 ```
-* A: `12,` `xs/sm/md/lg/xl`
+* A: `12` <br />`xs/sm/md/lg/xl`
 
 ```
 Q: How do we write the class name for an element to use a specific amount of columns at a specific breakpoint?
 ```
-* A: class=“`Col-md-8,` `col-xs-4`"
+* A: class=“`Col-md-8`<br /> `col-xs-4`"
 
 ### Medium
 
