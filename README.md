@@ -145,19 +145,21 @@ Q: What are the two categories of flex properties?
 <br />
 
 ```
-Q: How many columns are there in the bootstrap grid system? What are the 5 built in breakpoint sizes?
+Q: How many columns are there in the bootstrap grid system? 
+What are the 5 built in breakpoint sizes?
 ```
 * A: <br /> `12` <br /> `xs/sm/md/lg/xl`
 
 <br />
 
 ```
-Q: How do we write the class name for an element to use a specific amount of columns at a specific breakpoint?
+Q: How do we write the class name for an element to 
+use a specific amount of columns at a specific breakpoint?
 ```
 * A: <br /> class=“`Col-md-8`<br /> `col-xs-4`"
 
 <br />
-
+<br />
 
 
 ### Medium
@@ -200,15 +202,17 @@ relative - %, vh/vw
 relative - em (relative to parents length, 1em same as parent, compounds), rem(always relative to root html element (16 by default)`
 
 <br />
-
+<br />
 
 
 ### Hard
 
 <br />
 
+
 ```
-Q: How do select specific children in relation to the parent without knowing how to access that element?
+Q: How do select specific children in relation to
+the parent without knowing how to access that element?
 ```
 * A: <br />
 `element:first-child{}` <br />
@@ -248,11 +252,85 @@ Q: What is the z-index property used for?
 
 ### Easy
 
+<br />
+
+```
+Q: How do you link to a JS document? Where should this be done and why?
+```
+* A: <br /> `<script src=“script.js”></script>` <br />
+`just before the closing body tag, allows HTML/CSS to load first`
+
+<br />
+
+```
+Q: What are the main tags used in every html page? What do they do?
+```
+* A: <br /> `html` <br /> `head` <br /> `body`
+
+<br />
+
+```
+Q: What tag do you use to link to another place? What attribute?
+```
+* A: <br /> `<a href=''>`
+
+<br />
+
+```
+Q: What are the ways we identify/access an element? When would we use one over the other?
+```
+* A: <br /> `Id (for one specific element)` <br /> `class (for many elements that share same characteristics)` <br /> `attribute (specific cases)`
+
+<br />
+
+```
+Q: What are the main display types and what are the differences?
+```
+* A: <br /> `Block: create new line/box, can have margin/padding` <br />
+ `Inline: stay on same line, cannot use margin/padding` <br />
+ `Inline-block: stay on same line, can use margin/padding (img/btn)`
+
+<br />
+
+```
+Q: What do we use a select element for? What are its children elements?
+```
+* A: <br /> `Multiple options to select from`
+
+<br />
+
+```
+Q: What is the difference between radio and checkbox input types?
+```
+* A: <br /> `Select one (radio)` <br /> `select many (checkbox)`
+
+<br />
+<br />
 
 ### Medium
 
+<br />
+
+```
+Q: What are some attributes of an input tag?
+```
+* A: <br /> `Type (type of input)` <br /> `name (id for the input)` <br /> `value (the value in the input)`
+
+<br />
+
+```
+Q: What is semantic HTML? What are some examples?
+```
+* A: <br /> `A semantic element clearly describes its meaning to both the browser and the developer`
+<br />
+`<form>` <br /> `<table>` <br /> `<article>` <br /> `<nav>` <br /> `<header>` <br /> `Clearly defines its content.`
+
+<br />
+<br />
 
 ### Hard
+
+Work in progress :)
 
 
 
