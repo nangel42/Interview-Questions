@@ -90,9 +90,9 @@ Q: how do I connect my css file with in my html file?
 ```
 Q: What is a selector and what is its syntax?
 ```
-* A: <br /> `way to select html element to change style
-Selector { property: value }  — this is called a “rule”
-Property is what you want to change, value is how you want to change it`
+* A: <br /> `way to select html element to change style` <br />
+`Selector { property: value }  — this is called a “rule”` <br />
+`Property is what you want to change, value is how you want to change it`
 
 <br />
 
@@ -124,8 +124,7 @@ Q: What is the difference between margin, padding, and border?
 ```
 Q: What are the different ways to make a site responsive? Which are native?
 ```
-* A: <br /> `Native - Media Queries, Flexbox, Grid` <br />
-`Not Native - Bootstrap`
+* A: <br /> `Native - Media Queries, Flexbox, Grid` <br /> `Not Native - Bootstrap`
 
 <br />
 
@@ -156,7 +155,7 @@ What are the 5 built in breakpoint sizes?
 Q: How do we write the class name for an element to 
 use a specific amount of columns at a specific breakpoint?
 ```
-* A: <br /> class=“`Col-md-8`<br /> `col-xs-4`"
+* A: <br /> class=“`Col-md-8` or `col-xs-4`"
 
 <br />
 <br />
@@ -179,8 +178,8 @@ Q: How do you select multiple elements? all descendants? direct descendants?
 ```
 Q: What is specificity? What is the order of specificity?
 ```
-* A: <br /> `how specific the selector is an what will override what
-tag/element (1pt), class (10pt), id (100pt), inline (1000pt)`
+* A: <br /> `how specific the selector is an what will override what` <br />
+`tag/element (1pt), class (10pt), id (100pt), inline (1000pt)`
 
 <br />
 
@@ -738,5 +737,390 @@ Q: How do you write a GET/POST axios request?
 
 ### Medium
 
+<br />
+
+```
+Q: What reads and interprets our Javascript code?
+```
+* A: <br /> `the browser`
+
+<br />
+
+```
+Q: What is the global object in the browser?
+```
+* A: <br /> `window`
+
+<br />
+
+```
+Q: Why is it important to always initialize a variable with var/let/const?
+```
+* A: <br /> `Hoisting occurs, will attach to the global object and pollute scope`
+
+<br />
+
+```
+Q: What is concatenation and how can I do it?
+```
+* A: <br /> `Combining two things together` <br />
+options: <br /> `“” + “”`  <br /> `str1.concat('  ', str2)` <br /> `template literals`
+
+<br />
+
+```
+Q: What is a javascript expression?
+```
+* A: <br /> `something that evaluates to a value (variable, function, comparison, etc.)`
+
+<br />
+
+```
+Q: How can I tell what data type something is?
+```
+* A: <br /> `Typeof operator`
+Ex: <br />
+    `let variable = "hello"` <br />
+    `typeof variable //return "string"`
+
+<br />
+
+```
+Q: What is a callback function and why would we use them?
+```
+* A: <br /> `function you pass into another function` <br />
+`it is asynchronous (it only runs when the function it is inside is invoked)`
+
+<br />
+
+```
+Q: What is a higher order function? Examples?
+```
+* A: <br /> `function that accepts another function as an argument (or returns a function)` <br />
+` any function with a callback function is a higher order function` <br />
+Ex: <br /> `map` <br /> `filter` <br /> `reduce` <br /> `forEach` <br /> `setTimeout`
+
+<br />
+
+```
+Q: what does the indexOf() method do? what will it return if the item is not in the array?
+```
+* A: <br /> `search array for a value and return its index position in the array, or return -1`
+
+<br />
+
+```
+Q: What method can we use to check if an object has a specific property?
+```
+* A: <br /> `Obj.hasOwnProperty(‘property’) —returns boolean`
+
+<br />
+
+```
+Q: What do I mean by truthy/falsey? 
+What are the falsey values?
+```
+* A: `simply means when this value is type coerced into a boolean (for comparison purposes), what would it evaluate to?`<br />
+    `if it would evaluate to false it is considered falsey, if it would evaluate to true it is considered truthy` <br />
+`falsey - False, 0, “”, null, undefined, NaN (all other values are truthy)`
+
+<br />
+
+```
+Q: What is an API?
+```
+* A: <br /> `Application programming interface.` <br /> `An API is a server meant to be used/consumed by other applications by hitting their specified endpoints to get/post data.`
+
+<br />
+
+```
+Q: What are some parts of a URL?
+```
+* A: <br /> `base` <br /> `endpoint` <br /> `query parameters` <br />
+EX: <br /> `www.base.com/endpoint?queryparameters=value`
+
+<br />
+
+```
+Q: What is an endpoint?
+```
+* A: <br /> `the part of the URL specified by the API to get/post a specific resource` <br />
+`the API determines which endpoints can be reached and what resources they will return`
+
+<br />
+
+```
+Q: What is a query parameter? What is the syntax?
+```
+* A: <br /> `Additional data to send via the URL (placed at end of URL)` <br />
+`Syntax: ?key=value&key=value`
+
+<br />
+
+```
+Q: what is JSON?
+```
+* A: <br /> `most popular data format on the web` <br />
+`a string (plain text) formatted like a javascript object` <br />
+`must be converted into actual JS object to be used`
+
+<br />
+
+```
+Q: What are the methods we use for converting JSON?
+```
+* A: <br /> `JSON.parse() — parses JSON string into a JS object` <br />
+`JSON.stringify() — parses something into a JSON string`<br />
+`res.json() — takes the response and parses the JSON into a JS object`
+
+<br />
+<br />
 
 ### Hard
+
+<br />
+
+```
+Q: Difference between reference and primitive types?
+```
+* A: <br /> `Passed by reference (place in memory)` vs. `passed by value (copy)`
+
+<br />
+
+```
+Q: Which are the reference and primitive types?
+```
+* A: <br /> `Reference (objects, arrays, functions)` <br /> `primitives (strings, numbers, booleans, undefined, null)`
+
+<br />
+
+```
+Q: Which data types are mutable or immutable?
+```
+* A: <br /> `References types are mutable (values change and update everything that points to it)` <br />
+    EX: <br /> `array can change from [1,2,3] to [1,2,3,4] and still refer to the same array` <br />
+`Primitive types are immutible` <br />
+    EX: <br /> `a number cannot change from 3 to 4 and still refer to the same number (it is now refering to a different number)`
+
+<br />
+
+```
+Q: Will this evaluate to true or false and why?
+[1, 2, 3] == [1, 2, 3]
+```
+* A: <br /> `False. Because arrays and objects are reference types` <br />
+`so even if another array/object is exactly alike it is considered a different array/object and thus not equal`
+
+<br />
+
+```
+Q: What is the difference between shallow and deep copies?
+```
+* A: <br />`Shallow copy goes one level deep while copying, doesn't copy any references (just the values)` <br />
+`Deep copy not only copies all nested levels however deep, but it also copies any references`
+
+<br />
+
+```
+Q: How can I make a shallow copy of an array?
+```
+* A: <br />`slice()`<br /> `map()`<br /> `filter()`<br /> `reduce()`<br /> `spread operator`
+
+<br />
+
+```
+Q: how can I make a shallow copy of an object?
+```
+* A: <br /> `Object.create({} obj)`<br /> `object.assign({}, obj)` <br /> `spread operator`
+
+<br />
+
+```
+Q: what does Object.keys() do?
+```
+* A: <br />`returns an array of a given object's own property names, in the same order as we get with a normal loop.`
+
+<br />
+
+```
+Q: What is the ternary operator?
+```
+* A: `another way to write a condition (more concise)` <br />
+Ex: `Condition ? True : false`
+```
+    conditional
+    if(person.name === 'Sean'){
+        person.role = 'instructor' 
+    } else { 
+        person.role = 'student' 
+    }
+```
+```
+    //ternary
+    person.role = person.name === 'Sean' ? 'instructor' : 'student'
+    //read: if person.name equals Sean is true, then person.role is instructor, else if it is false, then person.role is student
+```
+
+<br />
+
+```
+Q: What is event bubbling?
+```
+* A: <br /> `When an event is fired, it then bubbles up and is fired also by its parent, grandparent, and so on up the entire DOM tree.` <br />
+`thus you can put your event listener anywhere that you want the event to be handled`
+
+<br />
+
+```
+Q: How can we prevent event bubbling?
+```
+* A: <br /> `e.stopPropagation()`
+
+<br />
+
+```
+Q: What is traversing the DOM? 
+What methods can we use?
+```
+* A: `How to move from one part of the DOM to another and select elements based on their relation to each other in the DOM`<br />
+Ex: `element  +  parentNode()`<br />
+`.children()`<br />
+`.firstChild()` <br />
+`.lastChild()`<br />
+`.previousSibling()`<br />
+`.nextSibling()`<br />
+
+<br />
+
+//Q: What is promise.all()
+//A: takes an array of promises, returns a single promise that resolves and runs all the promises at once when they are all ready (all the promises have been resolved)
+//if any are rejected, none will be run
+
+
+//Q: What is callback hell and how do we avoid it?
+//A: before promises (or async/await), callback functions were used to handle asynchronous code, but then there would often have to be MANY nested callbacks which made the code very ugly and less easy to read/maintain. This is referred to as “callback hell”.
+    function asyncFunc((cb1) => {
+        (cb2) => {
+            (cb3) => {
+                (cb4) => {
+                    (cb5) => {
+                        (cb6) => {
+                            (cb7) => {
+                                (cb8) => {
+                                   
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
+
+//We can avoid callback hell by using promises and stringing/chaining .then() methods to handle the asynchronous code (much more readable!)
+    Axios.get(url)
+        .then(() => {})
+        .then(() => {})
+        .then(() => {})
+        .then(() => {})
+        .then(() => {})
+
+
+//Q: What is async/await?
+//A: way to handle asynchronous code
+//Async is keyword to specify a function is asynchronous 
+//Await is keyword to pause execution of function until the async code is resolved, then will continue 
+
+
+//Q: What is a switch statement?
+//A: Another way to write a condition, used when you know the specific set of possible options
+    //Syntax:     
+    switch(expression){
+        case value1: 
+            statement; 
+            break; 
+        case value1: 
+            statement; 
+            break; 
+        default: 
+            statement;
+    }
+
+    //Expression
+        //name for type of value to be expected (can be any word)
+    //Case Values
+	    //Value tested to see if equal to the expression
+	    //Case values are tested with strict equality (===)
+	    //Can have as many case values as desired
+	//Statements
+	    //Statement is code executed if the expression matches the value
+	    //If not it breaks off and moves on the next case value
+	//Break
+	    //The break tells JavaScript to stop executing statements. 
+	    //If the break is omitted, the next statement will be executed (not good!)
+	//Default
+	    //Will be executed if no matching case statements are found. 
+	    //Think of it like the final else statement in an if/else chain.
+
+    //Example: 
+    switch(season){
+        case 'spring':
+            return "Spring is in the air";
+            break;
+        case 'summer':
+            return "Don't worry it's a dry heat";
+            break;
+        case 'fall':
+            return "The beautiful leaves of autumn";
+            break;
+        case 'winter':
+            return "Walking in a winter wonderland";
+            break;
+        default:
+            return "You did not type in a valid season name";
+    }
+
+
+//Question: How does "this" work in Javascript?
+//Answer: “this” is a variable that refers to the object where the function is invoked (its execution context)
+// “this” is usually used inside a function/method and ALWAYS refers to an object
+// used to access specific objects on a context specific basis
+// General: Can usually determine the context of this by looking at what is to the left when function is called (does not matter where it is defined but where called!!!)
+// 4 WAYS “this” takes a value (based on how/where function is called)
+    // 1) Within a function call (outside a declared object)
+    // refers to the global object context
+    // 2) Within methods call (inside a declared object)
+    // refers to the parent object context
+    // 3) Within a constructor function
+    // refers to the new instance of the object/class
+    // 4) call(), apply(), bind() methods
+    // can be used to choose the context of “this”
+
+    // Arrow Functions
+    // Binds the context of “this” to the enclosing context where the arrow function is defined (its context never changes)
+    // an arrow function does not create its own execution context, but uses the execution context from the outer function (context for “this”)
+    // Arrow function “inherits” its context from the function it is defined inside
+
+    //"this" context #1 (function)
+    function thisFunction(){
+        console.log(this)
+    }
+
+    //"this" context #2 (method)
+    myObject = {
+      name: "sean",
+      age: 34,
+      getOlder: function(){ 
+        this.age++
+        console.log(this)
+      }
+    }
+
+    //"this" context #3 (constructor)
+    class Human {
+      constructor(name, age){
+          this.name = name
+          this.age = age
+      }
+    }
+    
