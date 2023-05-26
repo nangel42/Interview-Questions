@@ -699,7 +699,7 @@ Q: What is .then() and .catch()?
 ```
 Q: How do you write a GET/POST fetch request? 
 ```
-* A: `GET`
+* A: <br /> `GET`
 ```
     fetch(url)
         .then(response => response.json())
@@ -721,7 +721,7 @@ Q: How do you write a GET/POST fetch request?
 ```
 Q: How do you write a GET/POST axios request?
 ``` 
-* A: `GET`
+* A: <br />`GET`
 ```
     Axios.get(url)
         .then(response => {})
@@ -731,6 +731,115 @@ Q: How do you write a GET/POST axios request?
     Axios.post(url, body)
         .then(response => {})
 ```
+
+<br />
+
+```
+Q: difference between var and let/const?
+```
+* A: <br /> `var is function scoped` <br />
+`let/const are block scoped` <br /> <br />
+`const cannot be reassigned (but reference type can change values)`
+```
+function varFunc(){
+    if(true){
+        var varScope = "I can be accessed within this function but outside this block scope"
+    }
+    console.log(varScope) // can access the var variable anywhere within that function scope
+}
+
+varFunc()
+```
+```
+function letFunc(){
+    if(true){
+        let letScope = "I cannot be accessed outside this block scope"
+    }
+    console.log(letScope) // can only access the let variable within its block scope (within its code block {})
+}
+
+letFunc()
+```
+<br />
+
+`const cannot be reassigned` <br />
+`const variable = 5` <br /><br />
+`variable = 6 // cannot do this!!!`<br />
+`variable++ // cannot do this!!!` <br /><br />
+```
+const variable = [1,2,3]
+
+variable.push(4) //can do this! Not reassigning (important distinction)
+
+console.log(variable)
+```
+<br />
+
+```
+Q: What are Template Literals and how do I write them?
+```
+* A: <br /> `way to write a string that can take/inject a dynamic value from a JS expression` <br />
+Ex:
+    `hello my name is ${name}`
+
+<br />
+
+```
+Q: What is .map?
+```
+* A: <br /> `iterates through array and runs callback function on each item`<br />
+```
+Returns each item into a new array (does not mutate original)
+
+    Array.map(item => { do this code…})
+
+    const newArr = numArray.map(num => {
+        return num * 2
+    })
+```
+<br />
+
+```
+Q: What is .filter?
+```
+* A: <br /> `iterates through array and runs callback function on each item`<br />
+```
+Returns each item that passes the condition into a new array (does not mutate original)
+    Array.filter(item => { do this code…})
+
+    const filteredArr = strArray.filter(name => {
+        return name.startsWith('b')
+    })
+    console.log(filteredArr)
+```
+```
+Chaining Methods
+    let filteredNames = strArray.map(name => name.toUpperCase()).filter(name => name.length > 5)
+    console.log(strArray)
+```
+
+<br />
+
+```
+Q: What is the Spread operator? (used for arrays/objects)
+```
+* A: <br /> `Used to make a shallow copy of an object/array without mutating original`
+```
+    Simply spreads out the VALUES of one object/array into another
+
+    Object:
+        const originalObject = {name: 'Sean', age: 34}
+        const copyObject = { ...originalObject}
+        const updatedObject = { ...originalObject, role: 'teacher'}
+
+    Array:
+    const animals = ['cat', 'dog', 'rat']
+    const names = ['felix', 'fido', 'fred']
+
+    const copyAnimals = [...animals]
+    const updatedAnimals = [...animals, 'pig', 'monkey']
+    const concatArrays = [...animals, ...names]
+```    
 
 <br />
 <br />
@@ -1107,6 +1216,8 @@ Q: How does "this" work in Javascript?
 `used to access specific objects on a context specific basis` <br />
 ` General: Can usually determine the context of this by looking at what is to the left when function is called (does not matter where it is defined but where called!!!)`<br />
 `4 WAYS “this” takes a value (based on how/where function is called)`
+
+```
     1) Within a function call (outside a declared object)
     refers to the global object context
     2) Within methods call (inside a declared object)
@@ -1115,17 +1226,19 @@ Q: How does "this" work in Javascript?
     refers to the new instance of the object/class
     4) call(), apply(), bind() methods
     can be used to choose the context of “this”
-
-    // Arrow Functions
-    // Binds the context of “this” to the enclosing context where the arrow function is defined (its context never changes)
-    // an arrow function does not create its own execution context, but uses the execution context from the outer function (context for “this”)
-    // Arrow function “inherits” its context from the function it is defined inside
-
+```
+/
+    `Arrow Functions` <br />
+    `Binds the context of “this” to the enclosing context where the arrow function is defined (its context never changes)` <br />
+    `an arrow function does not create its own execution context, but uses the execution context from the outer function (context for “this”)` <br />
+    `Arrow function “inherits” its context from the function it is defined inside` <br />
+```
     //"this" context #1 (function)
     function thisFunction(){
         console.log(this)
     }
-
+```
+```
     //"this" context #2 (method)
     myObject = {
       name: "sean",
@@ -1135,7 +1248,8 @@ Q: How does "this" work in Javascript?
         console.log(this)
       }
     }
-
+```
+```
     //"this" context #3 (constructor)
     class Human {
       constructor(name, age){
@@ -1143,4 +1257,5 @@ Q: How does "this" work in Javascript?
           this.age = age
       }
     }
-    
+```
+
