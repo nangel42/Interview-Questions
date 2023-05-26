@@ -321,9 +321,13 @@ Q: What are some attributes of an input tag?
 ```
 Q: What is semantic HTML? What are some examples?
 ```
-* A: <br /> `A semantic element clearly describes its meaning to both the browser and the developer`
-<br />
-`<form>` <br /> `<table>` <br /> `<article>` <br /> `<nav>` <br /> `<header>` <br /> `Clearly defines its content.`
+* A: <br /> `A semantic element clearly describes its meaning to both the browser and the developer` <br /> `ex:` <br />
+` <form> ` <br /> 
+`<table>` <br /> 
+`<article>` <br /> 
+`<nav>` <br /> 
+`<header>` <br /> 
+`Clearly defines its content.`
 
 <br />
 <br />
@@ -338,6 +342,399 @@ Work in progress :)
 
 ### Easy
 
+<br />
+
+```
+Q: What is a variable and how do I declare one?
+```
+* A: <br /> `stores a value` <br />
+`var variableName = whatever` <br />
+`let variableName = whatever` <br />
+`const variableName = whatever`
+
+<br />
+
+```
+Q: What is the difference between var/let/const?
+```
+* A: `Var is function scoped`
+```
+    function myFunc(){
+        if(true){
+            var varScope = "I can be accessed within this function but outside this block scope"
+        }
+        console.log(varScope) // can access the var variable anywhere within that function scope
+    }
+```
+<br />
+` let & const are block scoped`
+```
+    function myFunc(){
+        if(true){
+            let letScope = "I cannot be accessed outside this block scope"
+        }
+        console.log(letScope) // can only access the let variable within its block scope (within its code block {})
+    }
+```
+<br />
+`const cannot be reassigned`
+```
+const variable = 5
+variable = 6 // cannot do this!!!
+const variable = [1,2,3]
+variable.push(4) //can do this! Not reassigning (important distinction)
+```
+
+<br />
+
+```
+Q: What are the main data types in Javascript?
+```
+* A: <br /> `Number` <br /> `string` <br /> `boolean` <br /> `null` <br /> `undefined` <br /> `object`
+
+<br />
+
+```
+Q: What is a function and why do we use them?
+```
+* A: <br /> `set of instructions to execute, allow for reusable code`
+
+<br />
+
+```
+Q: What are some different ways to write a loop in Javascript? 
+Why would you use them?
+```
+* A: <br /> `For` <br /> `While` <br /> `ForEach` <br /> `ForIn` <br /> `ForOf` <br />
+```
+for(let i = 0; i < str.length; i++){}
+                                //for: most versatile loop, best for when need to setup specific conditions for the loop such as different starting points, ways to increment, etc. 
+                                //let i = 0         --> initialize your counter variable
+                                //i < str.length    --> setup condition for running loop (executing code)
+                                //i++               --> increment your counter variable
+```
+```
+while(x){}                      //as long as condition is true, will keep running code
+```
+```
+array.forEach(item => {})       //takes array and performs callback function on each item in the array
+                                //in this case each element in the array will be access by the parameter "item"
+```
+```
+for(let key in object){         //forIn: used to loop through an object
+    console.log(object)         //access the object (need to put the name of the actual object)
+    console.log(key)            //access the property (can be any word or use generic "key")
+    console.log(object[key])    //access the value (of the property)
+}
+```
+```
+for(let item of array)          //forOf: used to loop through an array
+                                //each index is accessed by the variable "item" (could be any word)
+```
+
+<br />
+
+```
+Q: What is an array/why would we use it? 
+How do we declare it?
+```
+* A: <br /> `think of like a variable that holds multiple values, using []`
+
+<br />
+
+```
+Q: How do you access an item in an array? 
+```
+* A: <br /> `by index value`
+
+<br />
+
+```
+Q: What do we mean when we say an array is index-based? 
+How does this work? 
+What else is index-based?
+```
+* A: <br /> `each value has an associated index` <br /> `indexes start at zero (zero-based)` <br />
+`strings are also index based (they are "iterable" - can iterate through each element by index)`
+
+<br />
+
+```
+Q: what methods are used to add/remove items from an array?
+```
+* A: <br /> `push` <br /> `pop` <br /> `shift` <br /> `unshift`
+
+<br />
+
+```
+Q: What is an object and why would we use it over an array? 
+How do we declare it?
+```
+* A: <br /> `Structure to hold key/value pairs, when we want to access a value by specific name, using {}` <br />
+`objects are "enumerable" not "iterable" (can loop though named properties, rather than index number)`
+
+<br />
+
+```
+Q: What are the two things any object can contain? 
+What is the difference?
+```
+A: <br /> `properties and methods (same but method is property that stores a function)`
+```
+    object = {
+        property: 'my property',
+        method: () => {}
+    }
+```
+
+<br />
+
+```
+Q: What are the two ways we can access the properties/values of an object?
+```
+* A: <br /> `dot notation` <br /> `bracket notation`
+
+<br />
+
+```
+Q: how do we add/change properties from an object? 
+How do we delete a property?
+```
+* A: <br /> `Simply declare it (person.name = ‘Sean’)  --> will either add the property/value or overwrite value if property already exists` <br />
+`delete person.name (not used much)`
+
+<br />
+
+```
+Q: How do you write a conditional in Javascript?
+```
+* A: <br /> `if(condition){code…}` <br /> `else if(condition){code…}` <br /> `else{code…}`
+
+<br />
+
+```
+Q: What is a template literal? 
+Why would I use it and what is the syntax?
+```
+* A: <br /> `Way to write a string that can take/inject a dynamic value from a Javascript expression` <br />
+`${expression}`
+
+<br />
+
+```
+Q: What is the difference between null/undefined?
+```
+* A: <br />`Undefined (variable not declared or declared and has no value)` <br />
+`null (variable is declared, and value is explicitly set to null (nothing/empty)`
+
+<br />
+
+```
+Q: What is type coercion?
+```
+* A: <br /> `when javascript converts from one data type to another`
+
+<br />
+
+```
+Q: What are some different ways to write a function in Javascript?
+```
+* A: <br /> `function declaration`
+```
+    function myFunc(){}
+```
+<br />
+`function expression (stored in a variable)`
+```
+    let myFunc = function(){} //this is an anonymous function (takes name from variable)
+```
+<br />
+`arrow function`
+```
+    let myFunc = () => {} //arrow function is a type of anonymous function
+```
+
+<br />
+
+```
+Q: What is the use of return in a function? 
+Where does the return statement need to be and why?
+```
+* A: <br /> `have access to the value the function produces` <br />
+`needs to be at the end of any code block/execution context after the code you want to run` <br />
+`the function with stop execution whenever it hits a return statement`
+
+<br />
+
+```
+Q: What is the difference between an argument and parameter? 
+When/where do we use each?
+```
+* A: <br /> `Parameter ("variable" name given when declaring the function)` <br />
+`argument (value given when calling the function)`
+```
+    function runThisFunction(parameter){
+        *code*
+    }
+
+    runThisFunction(argument)
+```
+
+<br />
+
+```
+Q: What is the difference between =, ==, ===?
+```
+* A: <br /> `= is the assignment operator, used to assign a value to a variable` <br /><br />
+`== is a comparison operator, used to compare if two things are equal (checks values only)`<br />
+    `will perform implicit type coercion if needed to compare values`<br /><br />
+`=== is a comparison operator, used to compare if two things are equal (checks values and type)`<br />
+    `no type coercion`<br />
+    `best to use this by default unless have specific reason to use ==`
+
+<br />
+
+```
+Q: What is the DOM?
+```
+* A: <br /> `Document Object Model. The “document” is an object supplied by the browser (it is inside the global “window” object) that creates a model of all the HTML elements as Javascript objects.`<br />
+`This object allows us to access and manipulate our HTML using Javascript`<br />
+`The javascript code we write does not alter the HTML it only alters the DOM`
+
+<br />
+
+```
+Q: What are the three main steps when using the DOM?
+```
+* A: <br /> `Step 1: Access the HTML element` <br />
+`Step 2: Alter the HTML element` <br />
+`Step 3: Append the HTML element`
+
+<br />
+
+```
+Q: What are the two main methods for accessing an element?
+```
+* A: <br /> `document.getElementBy…`<br />
+`Document.querySelector`
+
+<br />
+
+```
+Q: What are all the parts of an event listener?
+```
+* A: <br /> `Element.addEventListener(“click”, (e) => {…})` <br />
+`attach addEventListener to element` <br />
+`First parameter is type of event` <br />
+`second parameter is a callback function to execute code when event occurs (called the “event handler”)` <br />
+`first parameter of the callback function is always the event (e)`
+
+<br />
+
+```
+Q: What are two ways to create an element and append it to the DOM?
+```
+* A: <br /> `appendChild method`
+```
+    let newDiv = Document.createElement(‘div’)
+    element.appendChild(newDiv)
+```
+`innerHTML method`
+```
+element.innerHTML = `<div>${content}</div>`
+```
+
+<br />
+
+```
+Q: What is asynchronous Code and why do we need it?
+```
+* A: <br /> `Code that does not run in the normal order of execution but waits to run at a further time or after receiving a response` <br />
+`Does not interrupt the normal flow of the program (is non-blocking), so is necessary to allow the program to continue to run`
+
+<br />
+
+```
+Q: What are the main HTTP methods/verbs?
+```
+* A: <br /> `Get` <br /> `Post` <br /> `Put` <br /> `Patch` <br /> `Delete`
+
+<br />
+
+```
+Q: What is the difference between a GET and POST request?
+```
+* A: <br /> `GET “gets” a resource/data from the server`<br />
+    `sends all its data to the server within the URL (don’t ever use with sensitive information!)`<br />
+    `Can add extra data with the request using query parameters`<br /><br />
+`POST “posts” a resource/data to the server`<br />
+    `Post sends a body (object) with the data to be posted`<br />
+    `Setup header for the request to tell server what to expect`
+
+<br />
+
+```
+Q: What is a promise?
+```
+* A: <br /> `promise is an object that waits for the eventual completion/failure of the asynchronous code`
+
+<br />
+
+```
+Q: What are the three states of a promise?
+```
+* A: <br /> `Resolved` <br /> `rejected` <br /> `pending`
+
+<br />
+
+```
+Q: What is .then() and .catch()?
+```
+* A: <br /> `methods on all promise objects, take callback functions to handle the resolved/rejected cases` <br />
+`When a promise is resolved it will then run the .then() method (code you want to run after the original asynchronous code is complete)`<br />
+    `.then() will return another promise (can string several .then() methods)`<br /><br />
+`When a promise is rejected it will then run the .catch() method (code you want to run if the original asynchronous code fails)`
+
+<br />
+
+```
+Q: How do you write a GET/POST fetch request? 
+```
+* A: `GET`
+```
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {})
+```
+`POST`
+```
+    fetch(url, {
+        method: 'POST', 
+        headers: {}, 
+        body: {}
+    })
+        .then(response => response.json())
+        .then(data => {})
+```
+
+<br />
+
+```
+Q: How do you write a GET/POST axios request?
+``` 
+* A: `GET`
+```
+    Axios.get(url)
+        .then(response => {})
+```
+`POST`
+```
+    Axios.post(url, body)
+        .then(response => {})
+```
+
+<br />
+<br />
 
 ### Medium
 
