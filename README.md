@@ -77,13 +77,16 @@ Have 2-3 questions for them
 ## CSS
 
 ### Easy
+
 <br />
+
 ```
 Q: how do I connect my css file with in my html file?
 ```
 * A:  `<link rel=“stylesheet” href=“path” />`
 
 <br />
+
 ```
 Q: What is a selector and what is its syntax?
 ```
@@ -92,6 +95,7 @@ Selector { property: value }  — this is called a “rule”
 Property is what you want to change, value is how you want to change it`
 
 <br />
+
 ```
 Q: How would I write a element/class/id/attribute selector?
 ```
@@ -102,18 +106,21 @@ Q: How would I write a element/class/id/attribute selector?
 `element[attribute/value]{} `
 
 <br />
+
 ```
 Q: What is the box model?
 ```
 * A: `every element is a rectangle that takes up a certain amount of space and has margin, padding, and border`
 
 <br />
+
 ```
 Q: What is the difference between margin, padding, and border?
 ```
 * A: `margin (between elements)` <br />`padding (between element content and border)` <br />`border (outer edge of the element)`
 
 <br />
+
 ```
 Q: What are the different ways to make a site responsive? Which are native?
 ```
@@ -121,24 +128,28 @@ Q: What are the different ways to make a site responsive? Which are native?
 `Not Native - Bootstrap`
 
 <br />
+
 ```
 Q: What is a useful tool to align elements horizontally and create your layout? How do we declare something a flex element? 
 ```
 * A: `Flexbox` <br />`display: flex`
 
 <br />
+
 ```
 Q: What are the two categories of flex properties?
 ```
 * A: `flex container` <br />`flex child`
 
 <br />
+
 ```
 Q: How many columns are there in the bootstrap grid system? What are the 5 built in breakpoint sizes?
 ```
 * A: `12` <br />`xs/sm/md/lg/xl`
 
 <br />
+
 ```
 Q: How do we write the class name for an element to use a specific amount of columns at a specific breakpoint?
 ```
