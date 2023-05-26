@@ -982,7 +982,7 @@ Q: How can we prevent event bubbling?
 Q: What is traversing the DOM? 
 What methods can we use?
 ```
-* A: `How to move from one part of the DOM to another and select elements based on their relation to each other in the DOM`<br />
+* A: <br />`How to move from one part of the DOM to another and select elements based on their relation to each other in the DOM`<br />
 Ex: `element  +  parentNode()`<br />
 `.children()`<br />
 `.firstChild()` <br />
@@ -992,13 +992,19 @@ Ex: `element  +  parentNode()`<br />
 
 <br />
 
-//Q: What is promise.all()
-//A: takes an array of promises, returns a single promise that resolves and runs all the promises at once when they are all ready (all the promises have been resolved)
-//if any are rejected, none will be run
+```
+Q: What is promise.all()
+```
+* A: <br />`takes an array of promises, returns a single promise that resolves and runs all the promises at once when they are all ready (all the promises have been resolved)`<br />
+`if any are rejected, none will be run`
 
+<br />
 
-//Q: What is callback hell and how do we avoid it?
-//A: before promises (or async/await), callback functions were used to handle asynchronous code, but then there would often have to be MANY nested callbacks which made the code very ugly and less easy to read/maintain. This is referred to as “callback hell”.
+```
+Q: What is callback hell and how do we avoid it?
+```
+* A: <br />`before promises (or async/await), callback functions were used to handle asynchronous code, but then there would often have to be MANY nested callbacks which made the code very ugly and less easy to read/maintain. This is referred to as “callback hell”.`
+```
     function asyncFunc((cb1) => {
         (cb2) => {
             (cb3) => {
@@ -1016,25 +1022,34 @@ Ex: `element  +  parentNode()`<br />
             }
         }
     })
-
-//We can avoid callback hell by using promises and stringing/chaining .then() methods to handle the asynchronous code (much more readable!)
+```
+`We can avoid callback hell by using promises and stringing/chaining .then() methods to handle the asynchronous code (much more readable!)`
+```
     Axios.get(url)
         .then(() => {})
         .then(() => {})
         .then(() => {})
         .then(() => {})
         .then(() => {})
+```
 
+<br />
 
-//Q: What is async/await?
-//A: way to handle asynchronous code
-//Async is keyword to specify a function is asynchronous 
-//Await is keyword to pause execution of function until the async code is resolved, then will continue 
+```
+Q: What is async/await?
+```
+* A: <br />`way to handle asynchronous code`<br />
+`Async is keyword to specify a function is asynchronous `<br />
+`Await is keyword to pause execution of function until the async code is resolved, then will continue `
 
+<br />
 
-//Q: What is a switch statement?
-//A: Another way to write a condition, used when you know the specific set of possible options
-    //Syntax:     
+```
+Q: What is a switch statement?
+```
+* A: <br /> `Another way to write a condition, used when you know the specific set of possible options`<br />
+    Syntax: <br />
+    ```
     switch(expression){
         case value1: 
             statement; 
@@ -1045,24 +1060,25 @@ Ex: `element  +  parentNode()`<br />
         default: 
             statement;
     }
+    ```
+    Expression <br />
+        `name for type of value to be expected (can be any word)`
+    Case Values <br />
+	    `Value tested to see if equal to the expression` <br />
+	    `Case values are tested with strict equality (===)` <br />
+	    `Can have as many case values as desired` <br />
+	Statements <br />
+	    `Statement is code executed if the expression matches the value`<br />
+	    `If not it breaks off and moves on the next case value`<br />
+	Break <br />
+	    `The break tells JavaScript to stop executing statements. ` <br />
+	    `If the break is omitted, the next statement will be executed (not good!)` <br />
+	Default <br />
+	    `Will be executed if no matching case statements are found. `<br />
+	    `Think of it like the final else statement in an if/else chain.`<br />
 
-    //Expression
-        //name for type of value to be expected (can be any word)
-    //Case Values
-	    //Value tested to see if equal to the expression
-	    //Case values are tested with strict equality (===)
-	    //Can have as many case values as desired
-	//Statements
-	    //Statement is code executed if the expression matches the value
-	    //If not it breaks off and moves on the next case value
-	//Break
-	    //The break tells JavaScript to stop executing statements. 
-	    //If the break is omitted, the next statement will be executed (not good!)
-	//Default
-	    //Will be executed if no matching case statements are found. 
-	    //Think of it like the final else statement in an if/else chain.
-
-    //Example: 
+    Example: 
+```
     switch(season){
         case 'spring':
             return "Spring is in the air";
@@ -1079,22 +1095,26 @@ Ex: `element  +  parentNode()`<br />
         default:
             return "You did not type in a valid season name";
     }
+```
 
+<br />
 
-//Question: How does "this" work in Javascript?
-//Answer: “this” is a variable that refers to the object where the function is invoked (its execution context)
-// “this” is usually used inside a function/method and ALWAYS refers to an object
-// used to access specific objects on a context specific basis
-// General: Can usually determine the context of this by looking at what is to the left when function is called (does not matter where it is defined but where called!!!)
-// 4 WAYS “this” takes a value (based on how/where function is called)
-    // 1) Within a function call (outside a declared object)
-    // refers to the global object context
-    // 2) Within methods call (inside a declared object)
-    // refers to the parent object context
-    // 3) Within a constructor function
-    // refers to the new instance of the object/class
-    // 4) call(), apply(), bind() methods
-    // can be used to choose the context of “this”
+```
+Q: How does "this" work in Javascript?
+```
+* A: <br />`“this” is a variable that refers to the object where the function is invoked (its execution context)`<br />
+`“this” is usually used inside a function/method and ALWAYS refers to an object` <br />
+`used to access specific objects on a context specific basis` <br />
+` General: Can usually determine the context of this by looking at what is to the left when function is called (does not matter where it is defined but where called!!!)`<br />
+`4 WAYS “this” takes a value (based on how/where function is called)`
+    1) Within a function call (outside a declared object)
+    refers to the global object context
+    2) Within methods call (inside a declared object)
+    refers to the parent object context
+    3) Within a constructor function
+    refers to the new instance of the object/class
+    4) call(), apply(), bind() methods
+    can be used to choose the context of “this”
 
     // Arrow Functions
     // Binds the context of “this” to the enclosing context where the arrow function is defined (its context never changes)
