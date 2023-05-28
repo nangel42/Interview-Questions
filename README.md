@@ -199,7 +199,7 @@ Q: What unit is used to specify the length of something? How can you do it in re
 * A: <br /> `fixed - px
 relative - %, vh/vw
 relative - em (relative to parents length, 1em same as parent, compounds), rem(always relative to root html element (16 by default)`
-
+    
 <br />
 <br />
 
@@ -844,6 +844,11 @@ Q: What is the Spread operator? (used for arrays/objects)
 <br />
 <br />
 
+
+
+
+
+
 ### Medium
 
 <br />
@@ -983,7 +988,69 @@ Q: What are the methods we use for converting JSON?
 `res.json() — takes the response and parses the JSON into a JS object`
 
 <br />
+```
+Q: What is an arrow function?
+```
+* A: <br /> `shorter syntax for anonymous/callback functions` <br />
+    ```
+    const myArrowFunction = () => {...}
+    ```
+
 <br />
+
+```
+Q: What are default parameters?
+```
+* A: <br /> `Value to be given to the parameter if no argument is passed in`
+    ```
+    function makePerson(name='Sean', age=34)
+    ```
+
+<br />
+
+```
+Q: What is object destructuring?
+```
+* A: <br /> `easier way to references properties of an object`<br /> 
+`Get all the properties in any object with one variable declaration`<br />
+Ex:
+```
+    const personObject = {name: 'Sean', age: 34, role: 'teacher'}
+    const {name, age, role} = personObject
+```
+
+<br />
+
+```
+Q: What is a higher order function?
+```
+/* A: <br /> `A function that takes a callback function as an argument`
+
+<br />
+
+```
+Q: What is .forEach?
+```
+* A: <br /> `iterates through array and runs callback function on each item` <br />
+`Doesn't return anything (undefined), simply uses values or mutates original array` <br />
+```
+    Array.forEach((item) => { do this code…})
+
+    numArray.forEach((num, i) => {
+        numArray[i] = num * 2
+    })
+    console.log(numArray)
+```  
+
+<br />
+<br />
+
+
+
+
+
+
+
 
 ### Hard
 
@@ -1258,4 +1325,556 @@ Q: How does "this" work in Javascript?
       }
     }
 ```
+
+<br />
+
+```
+Q: What is reduce and how is it used?
+```
+* A: `Reduce` <br />
+`iterates through array and runs callback function on each item` <br />
+`results in one output (returns value of whatever type the accumulator is)`<br />
+Callback parameters:
+```
+        //acc: the accumulator
+                //this is the value that is returned
+                //Accumulates the callbacks return value
+                //it is remembered and may be updated across iterations
+        //val: the current value
+        //Index (optional)
+        //Array (optional)
+//Second parameter: the initial value (optional)
+        //The value the accumulator starts at
+        //If value supplied, the acc starts with that value and the current value will start at the first value in the array (index 0)
+        //if no value supplied, value will default to first element in the array and the current value will be equal to the second (index 1)
+
+    Array.reduce((acc, val) => { do this code…})
+```
+```
+    //Example #1
+    numArray.reduce((sum, num) => {
+      return sum + num
+    }, 0)
+```
+```
+    //Example #2
+    let newArr = [98, 47, 23, -6, 106, 73, 102, 44]
+
+    newArr.reduce((max, cur) => cur > max ? cur : max)
+```
+```
+    //Example #3
+    let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice', 'Bob', 'Bob'];
+
+    names.reduce((nameMap, name) => { 
+      nameMap[name] ? nameMap[name]++ : nameMap[name] = 1
+      return nameMap
+    }, {});
+```
+```
+    //Example #4
+    let letterArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd', 'a', 'c', 'c'];
+
+    letterArray.reduce((acc, letter) => {
+      acc.indexOf(letter) === -1 ? acc.push(letter) : acc
+      return acc
+    }, [])
+```
+
+<br />
+
+```
+Q: What is the rest operator? (used as a parameter)
+```
+* A: <br /> `LAST parameter of a function can be prefixed with (…) which will place all remaining arguments in an array` <br />
+    `function sum(...args){ }` <br />  OR   <br /> `function sum(name, age, ...argsCanBeNamedAnything){ }` <br />
+    ```
+    //can then use array methods
+
+    function multiplyEach(multiplier, ...numbers){
+      return numbers.map(num => num * multiplier)
+    }
+
+    multiplyEach(5,3,4,5,6,6,7,7,5,3,2)
+    ```
+
+<br />
+
+```
+Q: What are Classes in javascript?
+```
+* A: `A simpler way to use prototype inheritance and make instances of objects` <br />
+`Classes are like blueprints for objects` <br />
+`should be general to be reusable/modular` <br />
+	```
+    //Constructor (used to setup the details of the class/instance)
+        // used to describe how an object should be created and with which properties (fills in the details of the class/instance)
+        // The function that is called when a new class instance is created
+	```
+	```
+    //Super (used to extend the details of one class into a new class)
+        // Calls the constructor on prototype class to extend its properties to the current class/instance
+	```
+	```
+    // New (used to create a new instance of a class)
+        // creates a new empty object
+        // sets the value of “this” to be the new object
+        // Calls the constructor method (and passes in “this”)
+        // adds the “__proto__” property (to access the prototype methods)
+	```
+	```
+    //Prototype Inheritance:
+        //one object gets access to the properties and methods of another object
+	```
+	```
+    //Prototype/proto
+        // Every class has a “prototype” property
+        // where methods are stored
+        // can use to write methods to the prototype (Array.prototype.myMethod = () => {})
+        // All instances have a “__proto__” property 
+        // Links to the prototype and has access to its methods
+        // Its looks down until the “prototype chain” to find the method
+	```
+	```
+    //Syntax: 
+            class Person {
+                constructor(name, age, greeting) {
+                    this.name = name;
+                    this.age = age; 
+                    this.greeting = greeting;
+                }
+                greet() {
+                    console.log(this.greeting)
+                }
+            }
+
+            let sam = new Person('Sam', 22, 'Whattup Brah') 
+    
+    
+            class Teacher extends Person {
+                constructor() {
+                    super()
+                    this.role = 'teacher'
+                }
+                teach() {
+                    studentKnowledge += 100;
+                }
+                motivate() {
+                    studentMorale += 100;
+                }
+            }
+
+            let sean = new Teacher('Sean', 34, 'Hey there Buckaroo') 
+	```
+	
+## Javascript Librarys
+
+### Easy
+
+<br />
+
+```
+Q: Why use React? 
+What are the benefits?
+```
+* A: <br /> `Very fast/performant, separation of concerns/modularity`
+
+<br />
+
+```
+Q: What is JSX? 
+What are the benefits?
+```
+* A: <br /> `templating language, html-like syntax with dynamic javascript capability`
+
+<br />
+
+```
+Q: How do you do conditional rendering in React?
+```
+* A: <br /> `Setup some condition (often in state), then use a conditional (often a ternary) to render one thing or another (or null)`
+```
+{ isLoggedIn ? <div>Render Me</div> : <div>Not Logged In</div> }
+```
+
+<br />
+
+```
+Q: Explain the data flow in React?
+```
+* A: <br /> `data flows down (via props), events flow up (via callback functions)` <br />
+`technically it is the event that triggers the reference to the function (passed from the parent) and then the function is executed in the parent component with any data passed to it` <br />
+
+<br />
+
+```
+Q: What do all components return?
+```
+* A: <br /> `JSX`
+
+<br />
+
+```
+Q: What causes a component to re-render?
+```
+* A: <br /> `update to state`
+
+<br />
+
+```
+Q: How do I loop over an array and create multiple instances of a component?
+```
+* A: <br /> `use a map and return an instance of the component for each item in the array`
+```
+const listOfComponents = components.map(component => {
+    return (
+        <ChildComponent component={component} />
+    )
+})
+```
+
+<br />
+
+```
+Q: What are the differences between state and functional components?
+```
+* A: `State components: use a class construction, need to use "this" keyword, can use state and lifecycle methods (functional can do this with hooks), use the render method to return JSX` <br />
+* A: `Functional components: write with a function, only presentational/dumb components, just return JSX only. `
+
+<br />
+
+```
+Q: What is state (local)?
+```
+* A: <br /> `State is an object that contains the relevant data for the component`
+
+<br />
+
+```
+Q: How do you update the state of a component?
+```
+* A: <br /> `using the setState() method. `
+//NEVER say this.state.whatever = newValue
+
+<br />
+
+```
+Q: What are the steps to update an input in React?
+```
+* A: <br /> `1) input has an onChange event listener` <br /> `2) it calls an event handler (handleChange)` <br /> `3) the handler updates the state for that input field` <br /> `4) the input sets its value to be bound to that piece of state` <br />
+
+```
+state = {
+    search: ""
+}
+
+const handleSearch = (e) => {
+    const { value, name } = e.target
+    this.setState({ [name]: value })
+}
+
+return (
+    <input value={this.state.search} onChange={this.handleSearch}>
+        Search...
+    </input>
+)
+```
+
+<br />
+
+```
+Q: What is props?
+```
+* A: `Props is an object that contains data passed from parent to child component`
+
+<br />
+
+```
+Q: How do you declare a prop and how do you access it in the child component?
+```
+* A: <br /> `1) declare an instance of a component inside some JSX` <br /> `2) pass the prop inside a property of the component` <br /> `3) access by this.props.propName (or no 'this' in a functional component)` <br />
+
+```
+<Component data={myPropData} />
+
+inside 'Component': this.props.data
+```
+
+<br />
+
+```
+Q: What are the two ways to get props in a component? (React + Redux)
+```
+* A: <br /> `React - pass from parent to child.` <br /> `React-Redux - get from the store using mapStateToProps`
+
+<br />
+
+```
+Q: What are the 3 main lifecycle stages?
+```
+* A: <br /> `Mounting` <br /> `Updating` <br /> `Unmounting`
+
+<br />
+
+```
+Q: Which lifecycle method should be used to make an API call and why?
+```
+* A: <br /> `componentDidMount.` <br /> `Dont want to get data before component mounts because often the component relies on the data or the data needs to be put in state which doesn't exist until the component is mounted`
+
+<br />
+
+```
+Q: What is Redux? 
+What are the benefits of Redux?
+```
+* A: <br /> `Redux is a state management library. Allows all application to be handled by one single source of truth and access data anywhere needed. `
+
+<br />
+
+```
+Q: Explain the data flow in Redux
+```
+* A: <br /> `SHORT: Component => Action Creator => Reducer => Store => Component rerenders`
+* A: LONG: <br /> `1) Inside component call an action creator. Action creator is a function that returns an action. An action is an object that contains a type and an optional payload. The type tells the reducer which case to run, the payload is the data the reducer will use to update that piece of store state. The action (object) is then dispatched to the reducer. A reducer is a function that takes an action and the previous state and returns the new store state. After the store is updated this then forces the component to rerender and the cycle is complete. `
+
+<br />
+
+```
+Q: What is the store in Redux and what 2 things can we access from it?
+```
+* A: <br /> `Store contains all the relevant application state. We can access the state as well as the dispatch method. `
+
+<br />
+
+```
+Q: What is dispatch used for?
+```
+* A: <br /> `dispatch is used to send the action (object) to the reducer` <br />
+* clarification: `it is often said the action creator is dispatched, this is technically incorrect. the action creator is CALLED which then returns an action object which is then dispatched. So it is the result of the action creator (the action) that is dispatched. `
+
+```
+dispatchEvent(getAllUsers()) //notice order of operations: action creator is called, it returns an action, then that action is dispatched
+```
+
+<br />
+
+```
+Q: Explain mapStateToProps
+```
+* A: <br /> `this is a function (declared outside the component) that allows a component to have access to the store state by mapping the store state to the component. So the component has access to that piece of state through its own props (this.props.users). It takes state as a required parameter (this is the store state) and props as an optional second parameter (this is the props of the component)`
+
+```
+const mapStateToProps = state => {
+    return {
+        users: state.users.all
+    }
+}
+```
+
+<br />
+
+```
+Q: Explain mapDispatchToProps
+```
+* A: <br /> `this is a function (declared outside the component) that allows a component to have access to the dispatch method and for that method to be bound to any action creator, so that any action creator can be called and the action that is returned will automatically be dispatched. This can be written separately as a function or can simply pass an object with any action creators as the second argument to the connect function (easier)`
+
+```
+//option #1
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({ getAllUsers, loginUser, otherActionCreator }, dispatch)
+}
+```
+```
+//option #2
+export default connect(mapStateToProps, { getAllUsers, loginUser, otherActionCreator })(Component)
+```
+
+<br />
+
+```
+Q: What is an action creator?
+```
+* A: <br /> `Action creator is a function that returns an action.`
+
+<br />
+
+```
+Q: What is an action? What properties does it have?
+```
+* A: <br /> `An action is an object that contains a type and an optional payload. The type tells the reducer which case to run, the payload is the data the reducer will use to update that piece of store state. The action (object) is then dispatched to the reducer.`
+
+<br />
+
+```
+Q: What is the role of a reducer?
+```
+* A: <br /> `A reducer is a function that takes an action and the previous state and returns the new store state.`
+
+<br />
+
+```
+Q: What do we need to do in a component to call an action creator and get it to the reducer?
+```
+* A: <br /> `1) import the action creator into the component` <br /> `2) call the action creator inside the dispatch method to disptach the action to the reducer`
+
+<br />
+
+```
+Q: What is react router and why is it useful?
+```
+* A: <br /> `Way to dynamically render specific components based on the URL`
+
+<br />
+
+```
+Q: What is a Link tag used for and what attribute does it use?
+```
+* A: <br /> `The way to navigate to a particular URL, then the router decides what to render based on that URL. Like a <a> tag but does not cause a rerender, it used the to="url" attribute instead of href`
+
+<br />
+
+```
+Q: What is a Route and what 2 attributes does it use?
+```
+* A: <br /> `Its function is to decide what component to render based on a URL. The two attributes are the URL path and the Component`
+```
+<Route path="/about" component={About} /> 
+```
+
+<br />
+<br />
+
+
+### Medium
+
+<br />
+
+```
+Q: How do we bind a method to its component?
+```
+* A: <br />`we can bind it inside the constructor method (old way) or simply by writing our helper functions as an arrow function (automatically binds the method to the context it was declared)`
+
+<br />
+
+```
+Q: What are the similarities between state and props?
+```
+* A: <br /> `Both are objects, both store data`
+
+<br />
+
+```
+Q: What are the differences between state and props?
+```
+* A: <br /> `props is data meant to be passed/accessed in the child`
+
+<br />
+
+```
+Q: What are the arguments that setState takes? (1st is required/2nd is optional)
+```
+* A: <br /> `1st argument is an object with the piece(s) of state to be updated, second is a callback function that is executed AFTER the state has been set`
+
+<br />
+
+```
+Q: What is the "key" used for when looping/creating components?
+```
+* A: <br /> `key is used to make sure there are no duplicates and to make the process faster`
+
+<br />
+
+```
+Q: What are propTypes used for?
+```
+* A: <br /> `To declare and enforce the expected types for each component prop`
+
+<br />
+
+```
+Q: What do we mean by 'Component Lifecycle'?
+```
+* A: <br /> `The various stages a component goes through. Includes mounting, updating, and unmounting. Can have various things occur at these different stages in the components lifecycle through use of component lifecycle methods. `
+
+<br />
+
+```
+Q: What is the difference between mounting and rendering?
+```
+* A: <br /> `Mounting only occurs once at the beggining of the component lifecycle, render occurs many times anytime there is a change/update to state`
+
+<br />
+
+```
+Q: What are the main Lifecycle methods used (name at least 1) in each of the 3 lifecycle stages?
+```
+* A: <br /> `mounting phase - componentDidMount` <br /> `updating phase - componentDidUpdate` <br /> `unmounting phase - componentWillUnmount`
+
+<br />
+
+```
+Q: What do we mean by 'single source of truth'?
+```
+* A: <br /> `The store (the single source of truth) is the one place all application state is stored, updated, and accessed`
+
+<br />
+
+Q: What is Redux Thunk? How does it work?
+//A: Redux Thunk is a middleware to handle asynchronous action creators. When using redux thunk the action creator can return either an object or a function. If the action creator is synchronous it will return an action object like normal. If the action creator is asynchronous it will return a function instead (this is the new part). The function will wait for the asyncronous operation to complete and then the action is manually dispatched inside the function. 
+
+//Q: What does the Provider do in React-Redux?
+//A: The provider allows any/all components to have access to the store state
+
+//Q: What does Connect do in React-Redux?
+//A: the Connect method allows a specific component to actually access the store state that the provider provides
+
+//Q: What two arguments do we pass connect?
+//A: mapStateToProps, mapDispatchToProps
+
+//Q: decribe how to write a reducer. What are its parameters and syntax?
+//A: write a function, declare state and action as parameters, state can optionally be set to some initial state, make switch statement with action.type as the value to check, add cases for eah type and return the new state using the payload if necessary
+
+const initialState = {
+    all: [],
+    one: {}
+  }
+
+export default function(state = initialState, action) {
+    switch (action.type) {
+      case ADD_TODO:
+        return [ ...state.all, action.payload ]
+      default:
+        return state
+    }
+    
+
+//Q: decribe how to write an Action Creator. 
+
+export const fetchUsers = () => {
+  return async dispatch => {
+    let response = await axios.get(`http://localhost:8000/users`)
+        dispatch({
+            type: FETCH_USERS,
+            payload: response.data
+        })
+    }
+}
+    
+export const addListing = (newListing) => {
+  return async (dispatch) => {
+    let listing = await axios.post(`http://localhost:8000/addbucket/${newListing.id}`, newListing)
+    dispatch({
+      type: ADD_LISTING,
+      payload: listing.data[0]
+    })
+  }
+}
+
+//Q: What is Switch tag used for in React-Router?
+//A: Renders the first child <Route> or <Redirect> that matches the location. It only renders the first match (unlike just using route tags which will render all matches)
+
+
+### Hard
+
+
 
