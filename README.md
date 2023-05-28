@@ -1921,15 +1921,30 @@ Q: What is the virtual DOM? How does it work?
 ```
 Q: How can you force a component to rerender?
 ```
-A: use forceUpdate() or set a piece of state and then update it
+A: <br /> `use forceUpdate() or set a piece of state and then update it`
 
-//Q: What method is used to create a Store? What two arguments do we usually pass it?
-//A: createStore(rootReducer, applyMiddleware) -- root reducer includes all the combined reducers, applyMiddleware includes all the middleware
+<br />
 
-//Q: What props does BrowserRouter provide to its children?
-//A: router props -- history, match, location
+```
+Q: What method is used to create a Store? What two arguments do we usually pass it?
+```
+* A: <br /> `createStore(rootReducer, applyMiddleware) -- root reducer includes all the combined reducers, applyMiddleware includes all the middleware`
 
-//Q: How can I access the value of a URL param?
-//A: props.match.params.nameOfParameter
+<br />
+
+```
+Q: What props does BrowserRouter provide to its children?
+```
+* A: <br /> `router props -- history, match, location`
+
+<br />
+
+```
+Q: How can I access the value of a URL param?
+```
+* A: `props.match.params.nameOfParameter`
+
+<br />
+<br />
 
 
