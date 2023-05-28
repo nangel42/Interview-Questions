@@ -1819,21 +1819,40 @@ Q: What do we mean by 'single source of truth'?
 
 <br />
 
+```
 Q: What is Redux Thunk? How does it work?
-//A: Redux Thunk is a middleware to handle asynchronous action creators. When using redux thunk the action creator can return either an object or a function. If the action creator is synchronous it will return an action object like normal. If the action creator is asynchronous it will return a function instead (this is the new part). The function will wait for the asyncronous operation to complete and then the action is manually dispatched inside the function. 
+```
+* A: <br /> `Redux Thunk is a middleware to handle asynchronous action creators. When using redux thunk the action creator can return either an object or a function. If the action creator is synchronous it will return an action object like normal. If the action creator is asynchronous it will return a function instead (this is the new part). The function will wait for the asyncronous operation to complete and then the action is manually dispatched inside the function. `
 
-//Q: What does the Provider do in React-Redux?
-//A: The provider allows any/all components to have access to the store state
+<br />
 
-//Q: What does Connect do in React-Redux?
-//A: the Connect method allows a specific component to actually access the store state that the provider provides
+```
+Q: What does the Provider do in React-Redux?
+```
+* A: <br /> `The provider allows any/all components to have access to the store state`
 
-//Q: What two arguments do we pass connect?
-//A: mapStateToProps, mapDispatchToProps
+<br />
 
-//Q: decribe how to write a reducer. What are its parameters and syntax?
-//A: write a function, declare state and action as parameters, state can optionally be set to some initial state, make switch statement with action.type as the value to check, add cases for eah type and return the new state using the payload if necessary
+```
+Q: What does Connect do in React-Redux?
+```
+* A: <br /> `the Connect method allows a specific component to actually access the store state that the provider provides`
 
+<br />
+
+```
+Q: What two arguments do we pass connect?
+```
+* A: `mapStateToProps` <br /> `mapDispatchToProps`
+
+<br />
+
+```
+Q: decribe how to write a reducer. What are its parameters and syntax?
+```
+* A: <br /> `write a function, declare state and action as parameters, state can optionally be set to some initial state, make switch statement with action.type as the value to check, add cases for eah type and return the new state using the payload if necessary` <br />
+
+```
 const initialState = {
     all: [],
     one: {}
@@ -1846,10 +1865,15 @@ export default function(state = initialState, action) {
       default:
         return state
     }
-    
+```
 
-//Q: decribe how to write an Action Creator. 
+<br />
 
+```
+Q: decribe how to write an Action Creator. 
+```
+* A: <br />
+```
 export const fetchUsers = () => {
   return async dispatch => {
     let response = await axios.get(`http://localhost:8000/users`)
@@ -1869,12 +1893,43 @@ export const addListing = (newListing) => {
     })
   }
 }
+```
 
-//Q: What is Switch tag used for in React-Router?
-//A: Renders the first child <Route> or <Redirect> that matches the location. It only renders the first match (unlike just using route tags which will render all matches)
+<br />
+
+```
+Q: What is Switch tag used for in React-Router?
+```
+* A: <br /> `Renders the first child <Route> or <Redirect> that matches the location. It only renders the first match (unlike just using route tags which will render all matches)`
+
+<br />
+<br />
+
 
 
 ### Hard
 
+<br />
+
+```
+Q: What is the virtual DOM? How does it work?
+```
+* A: <br /> `The virtual DOM is a layer on top of the actual DOM, it provides a separate copy of the DOM so that when it is updating it checks the difference between it (the virtual DOM) and the actual DOM and changes/renders only those differences in the actual DOM`
+
+<br />
+
+```
+Q: How can you force a component to rerender?
+```
+A: use forceUpdate() or set a piece of state and then update it
+
+//Q: What method is used to create a Store? What two arguments do we usually pass it?
+//A: createStore(rootReducer, applyMiddleware) -- root reducer includes all the combined reducers, applyMiddleware includes all the middleware
+
+//Q: What props does BrowserRouter provide to its children?
+//A: router props -- history, match, location
+
+//Q: How can I access the value of a URL param?
+//A: props.match.params.nameOfParameter
 
 
