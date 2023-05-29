@@ -365,7 +365,9 @@ Q: What is the difference between var/let/const?
         console.log(varScope) // can access the var variable anywhere within that function scope
     }
 ```
+
 <br />
+
 ` let & const are block scoped`
 ```
     function myFunc(){
@@ -375,7 +377,9 @@ Q: What is the difference between var/let/const?
         console.log(letScope) // can only access the let variable within its block scope (within its code block {})
     }
 ```
+
 <br />
+
 `const cannot be reassigned`
 ```
 const variable = 5
