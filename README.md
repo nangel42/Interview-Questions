@@ -546,12 +546,15 @@ Q: What are some different ways to write a function in Javascript?
 ```
     function myFunc(){}
 ```
+
 <br />
+
 `function expression (stored in a variable)`
 ```
     let myFunc = function(){} //this is an anonymous function (takes name from variable)
 ```
 <br />
+
 `arrow function`
 ```
     let myFunc = () => {} //arrow function is a type of anonymous function
